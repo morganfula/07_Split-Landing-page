@@ -9,6 +9,8 @@ $right-btn-hover-color: rgba(249, 34, 84, 0.8);
 $hover-width: 75%;
 $other-width: 25%;
 
+$speed: 1000ms;
+
 * {
   box-sizing: border-box;
 }
@@ -43,6 +45,7 @@ body {
     background: url("https://images.unsplash.com/photo-1544885935-98dd03b09034?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80");
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 
     &::before {
       content: "";
@@ -58,6 +61,7 @@ body {
     background: url("https://images.unsplash.com/photo-1536957604029-6779ab858551?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80");
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 
     &::before {
       content: "";
@@ -69,11 +73,12 @@ body {
   }
 
   h1 {
-    font-size: 4rem;
+    font-size: 6rem;
+    font-weight: lighter;
     color: #fff;
     position: absolute;
     left: 50%;
-    right: 20%;
+    top: 18%;
     transform: translateX(-50%);
     white-space: nowrap;
   }
@@ -124,4 +129,11 @@ body {
   .left {
     width: $other-width;
   }
+}
+
+.split.right,
+.split.left,
+.split.right::before,
+.split.left::before {
+  transition: all $speed ease-in-out;
 }
